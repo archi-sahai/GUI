@@ -23,6 +23,8 @@ A React dashboard for monitoring and controlling the pod's electrical systems: s
 - **Integrity:** automatic checks on each run (sample loss, gaps, timestamp order, temperature validity and spikes, stuck sensors, IMU validity and position jumps), with a PASS / WARN / FAIL verdict
 - **IMU:** position along the track, velocity, acceleration and orientation
 
+<img width="953" height="599" alt="image" src="https://github.com/user-attachments/assets/fd9c0d97-73c0-44ef-a2be-d122a1c0d0de" />
+
 Pages use URL hashes (`#/temps`, `#/integrity`, `#/imu`), so the browser Back button works.
 
 **Theme:** dark mode (default) and light mode (white background, purple boxes, black text). The toggle is in the top bar and on the diagnostics pages, and the choice is remembered.
