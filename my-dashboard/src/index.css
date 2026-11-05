@@ -1,0 +1,414 @@
+
+@import "tailwindcss";
+
+/* =========================================================
+   GLOBAL THEME
+   ========================================================= */
+
+:root {
+  --text: #3b324a;
+  --text-h: #171024;
+
+  --bg: #f4f0fb;
+
+  --border: #dcd0ec;
+
+  --code-bg: #e8e0f5;
+
+  --accent: #9333ea;
+  --accent-bg: rgba(147, 51, 234, 0.08);
+  --accent-border: rgba(147, 51, 234, 0.3);
+
+  --social-bg: rgba(232, 224, 245, 0.5);
+
+  --shadow: rgba(59, 50, 74, 0.08) 0 4px 12px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* Larger base font */
+  font: 17px/140% var(--sans);
+
+  letter-spacing: 0.15px;
+
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   GLOBAL BOX SIZING
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
+
+html {
+  width: 100%;
+  min-height: 100%;
+
+  /* Allow normal page scrolling */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--bg);
+  color: var(--text);
+
+  /* IMPORTANT:
+     Do not use overflow: hidden here.
+     It prevents the page from scrolling. */
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+#root {
+  width: 100%;
+
+  /* Do NOT force the root to exactly 100vh */
+  min-height: 100vh;
+  height: auto;
+
+  max-width: none;
+
+  margin: 0;
+  padding: 16px;
+
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+
+  /* Allow content to extend beyond viewport */
+  overflow: visible;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading);
+  color: var(--text-h);
+
+  margin-top: 0;
+}
+
+
+h1 {
+  font-size: 34px;
+  line-height: 115%;
+  font-weight: 600;
+
+  letter-spacing: -1px;
+
+  margin: 16px 0;
+}
+
+
+h2 {
+  font-size: 20px;
+  line-height: 120%;
+  font-weight: 600;
+
+  letter-spacing: -0.2px;
+
+  margin: 0 0 8px;
+}
+
+
+h3 {
+  font-size: 18px;
+  line-height: 125%;
+  font-weight: 600;
+
+  margin: 0 0 6px;
+}
+
+
+h4 {
+  font-size: 17px;
+  line-height: 130%;
+  font-weight: 600;
+
+  margin: 0 0 6px;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+   ========================================================= */
+
+p {
+  margin: 0 0 8px;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CODE / MONOSPACE
+   ========================================================= */
+
+code,
+.counter {
+  font-family: var(--mono);
+
+  display: inline-flex;
+
+  border-radius: 4px;
+
+  color: var(--text-h);
+}
+
+
+code {
+  font-size: 15px;
+  line-height: 130%;
+
+  padding: 3px 7px;
+
+  background: var(--code-bg);
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+button {
+  font-family: var(--sans);
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  border-radius: 6px;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+
+button:active {
+  transform: translateY(1px);
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+select,
+textarea {
+  font-family: var(--sans);
+  font-size: 16px;
+
+  color: var(--text);
+  background: white;
+
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  padding: 8px 10px;
+
+  box-sizing: border-box;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--accent-border);
+  outline-offset: 1px;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c8b8df;
+}
+
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(147, 51, 234, 0.18);
+  color: var(--text-h);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 17px;
+  }
+
+  body {
+    font-size: 17px;
+  }
+
+  #root {
+    padding: 14px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin: 14px 0;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    font-size: 16px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  #root {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 480px) {
+  #root {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+}

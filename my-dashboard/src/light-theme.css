@@ -1,0 +1,117 @@
+/* ===============================================================
+   LIGHT MODE: white page, purple boxes, black text.
+   Active only when <html data-theme="light">. Dark mode is the
+   untouched default, so nothing here affects it.
+   Works by remapping the Tailwind classes the app already uses.
+   =============================================================== */
+
+/* ===============================================================
+   SCROLL FIX (both modes): some global stylesheets lock the page
+   with height:100% / overflow:hidden or center #root in a flex
+   body. Undo that so long pages scroll normally.
+   =============================================================== */
+html,
+body {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+body {
+  display: block !important;
+  place-items: initial !important;
+}
+#root {
+  height: auto !important;
+  min-height: 100vh;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  text-align: left;
+}
+
+/* ===============================================================
+   DARK MODE: headings white (a global h1/h2 colour rule was making
+   them black). Panel titles and page titles only.
+   =============================================================== */
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3.uppercase {
+  color: #ffffff !important;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #ffffff !important;
+  color: #000000 !important;
+  color-scheme: light;
+}
+
+/* ---------- page + boxes ---------- */
+html[data-theme="light"] .bg-slate-950 { background-color: #ffffff !important; }          /* page */
+html[data-theme="light"] .bg-slate-900 { background-color: #d8b4fe !important; }          /* panels / cards (purple) */
+html[data-theme="light"] .bg-slate-800 { background-color: #e9d5ff !important; }          /* buttons, tabs */
+html[data-theme="light"] .bg-slate-950\/40,
+html[data-theme="light"] .bg-slate-950\/50,
+html[data-theme="light"] .bg-slate-950\/60 { background-color: #f3e8ff !important; }      /* inner boxes */
+html[data-theme="light"] .hover\:bg-slate-700:hover,
+html[data-theme="light"] .hover\:bg-slate-900:hover { background-color: #c4b5fd !important; }
+
+/* ---------- borders ---------- */
+html[data-theme="light"] .border-slate-800,
+html[data-theme="light"] .border-slate-800\/60,
+html[data-theme="light"] .border-slate-800\/80,
+html[data-theme="light"] .border-slate-700,
+html[data-theme="light"] .border-slate-600,
+html[data-theme="light"] .border-slate-500 { border-color: #9333ea !important; }
+html[data-theme="light"] .border-cyan-400,
+html[data-theme="light"] .border-cyan-500,
+html[data-theme="light"] .hover\:border-cyan-400:hover,
+html[data-theme="light"] .hover\:border-cyan-500:hover { border-color: #6b21a8 !important; }
+
+/* ---------- text: everything grey/white-ish becomes black ---------- */
+html[data-theme="light"] .text-slate-100,
+html[data-theme="light"] .text-slate-200,
+html[data-theme="light"] .text-slate-300,
+html[data-theme="light"] .text-slate-400,
+html[data-theme="light"] .text-slate-500,
+html[data-theme="light"] .text-slate-600,
+html[data-theme="light"] .hover\:text-slate-100:hover,
+html[data-theme="light"] .hover\:text-slate-200:hover { color: #000000 !important; }
+html[data-theme="light"] h1.text-white { color: #000000 !important; }
+
+/* ---------- accent (cyan) -> deep purple ---------- */
+html[data-theme="light"] .text-cyan-200,
+html[data-theme="light"] .text-cyan-300,
+html[data-theme="light"] .text-cyan-400 { color: #581c87 !important; }
+html[data-theme="light"] .bg-cyan-400,
+html[data-theme="light"] .bg-cyan-500 { background-color: #7e22ce !important; }
+html[data-theme="light"] .hover\:bg-cyan-300:hover { background-color: #9333ea !important; }
+html[data-theme="light"] .bg-cyan-500\/30 { background-color: rgba(126, 34, 206, 0.35) !important; }
+html[data-theme="light"] .text-slate-950 { color: #ffffff !important; }                   /* text on the solid purple Back button */
+html[data-theme="light"] .shadow-\[0_0_24px_rgba\(34\,211\,238\,0\.55\)\] { box-shadow: 0 0 18px rgba(126, 34, 206, 0.45) !important; }
+
+/* ---------- status colours: darker so they read on light purple ---------- */
+html[data-theme="light"] .text-emerald-300,
+html[data-theme="light"] .text-emerald-400 { color: #047857 !important; }
+html[data-theme="light"] .text-amber-300,
+html[data-theme="light"] .text-amber-400 { color: #b45309 !important; }
+html[data-theme="light"] .text-red-400 { color: #b91c1c !important; }
+
+/* state buttons + SIM/LIVE badges (dark tinted chips -> light tinted chips) */
+html[data-theme="light"] .bg-red-950\/80 { background-color: #fecaca !important; }
+html[data-theme="light"] .bg-amber-950\/80,
+html[data-theme="light"] .bg-amber-950\/60 { background-color: #fde68a !important; }
+html[data-theme="light"] .bg-cyan-950\/80,
+html[data-theme="light"] .bg-purple-950\/80 { background-color: #e9d5ff !important; }
+html[data-theme="light"] .bg-emerald-950\/80,
+html[data-theme="light"] .bg-emerald-950\/60 { background-color: #bbf7d0 !important; }
+html[data-theme="light"] .text-red-200 { color: #7f1d1d !important; }
+html[data-theme="light"] .text-amber-200 { color: #78350f !important; }
+html[data-theme="light"] .text-purple-200 { color: #581c87 !important; }
+html[data-theme="light"] .text-emerald-200 { color: #064e3b !important; }
+
+/* ---------- SVG charts ---------- */
+html[data-theme="light"] svg text { fill: #000000 !important; }
+html[data-theme="light"] svg line[stroke="#1e293b"] { stroke: #c4b5fd !important; }
