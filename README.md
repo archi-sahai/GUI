@@ -105,6 +105,3 @@ This dashboard is a monitoring aid. It must not be the only safety system on the
 - IMU position drifts over time. Correct it with track markers or encoders if available.
 - The Sensors panel needs `sensors`, `sensorsSimulated` and `onToggleSensor` passed from `App.jsx`.
 
-## Team
-
-LoopMIT. **TODO:** add names, contact and licence.
